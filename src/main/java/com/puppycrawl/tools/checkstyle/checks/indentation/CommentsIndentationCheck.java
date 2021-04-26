@@ -859,7 +859,7 @@ public class CommentsIndentationCheck extends AbstractCheck {
      */
     private static DetailAST findTokenWhichBeginsTheLine(DetailAST root) {
         final DetailAST tokenWhichBeginsTheLine;
-        if (isUsingOfObjectReferenceToInvokeMethod(root)) {
+        if (!isUsingOfObjectReferenceToInvokeMethod(root)) {
             tokenWhichBeginsTheLine = findStartTokenOfMethodCallChain(root);
         }
         else {
